@@ -25,7 +25,6 @@ namespace Konvertor.Controls
 
             if (Items[e.Index] is Language language)
             {
-                // Рисуем иконку
                 if (language.Icon != null)
                 {
                     Rectangle iconRect = new Rectangle(e.Bounds.X + 2, e.Bounds.Y + 2, 24, 24);
