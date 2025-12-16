@@ -16,7 +16,7 @@ namespace Konvertor.Forms
     {
         private PythonService _pythonService;
         private HistoryService _historyService;
-        private readonly string _apiKey = "AIzaSyCgkzcPE9GAHR0wgYgz44DvdO6fIAIHcv8";
+        private readonly string _apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY") ?? "YOUR_GROQ_API_KEY_HERE";
 
         private const int _editorPaddingLeft = 8;
         private const int _editorPaddingTop = 4;

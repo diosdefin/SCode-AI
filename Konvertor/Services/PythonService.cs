@@ -586,7 +586,7 @@ namespace Konvertor.Services
 
         private string CreatePythonScript(string sourceCode, string fromLang, string toLang)
         {
-            string groqApiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY") ?? "YOUR_GROQ_API_KEY_HERE";
+            string groqApiKey = _apiKey;
             string modelForRequest = "llama-3.1-8b-instant";
 
             return $@"
@@ -685,7 +685,7 @@ except Exception as e:
 
         private string CreatePythonAnalysisScript(string sourceCode, string language)
         {
-            string groqApiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY") ?? "YOUR_GROQ_API_KEY_HERE";
+            string groqApiKey = _apiKey;
             string modelForRequest = "llama-3.1-8b-instant";
 
             return $@"
