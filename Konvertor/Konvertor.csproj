@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ApplicationIcon>Resources\main.ico</ApplicationIcon>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- НАСТРОЙКИ ДЛЯ ЕДИНОГО EXE ФАЙЛА -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    
+    <!-- Критически важные параметры для включения всех DLL -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    
+    <!-- Отключаем оптимизации, которые могут вызывать проблемы -->
+    <PublishTrimmed>false</PublishTrimmed>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    
+    <!-- Убираем отладочную информацию -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    
+    <!-- Для обработки проблем с пакетами .NET Framework -->
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\cpp.png" />
+    <None Remove="Resources\csharp.png" />
+    <None Remove="Resources\go.png" />
+    <None Remove="Resources\java.png" />
+    <None Remove="Resources\javascript.png" />
+    <None Remove="Resources\main.ico" />
+    <None Remove="Resources\python.png" />
+    <None Remove="Resources\rust.png" />
+    <None Remove="Resources\typescript.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\cpp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\csharp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\go.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\java.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\javascript.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\main.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\python.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\rust.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\typescript.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jacobslusser.ScintillaNET" Version="3.6.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- Исключаем ненужные локали для уменьшения размера -->
+  <ItemGroup>
+    <SatelliteResourceLanguages Include="ru" />
+  </ItemGroup>
+
+</Project>
